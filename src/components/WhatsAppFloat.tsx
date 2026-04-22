@@ -16,7 +16,7 @@ export function WhatsAppFloat() {
       whileTap={{ scale: 0.98 }}
     >
       <span className="jk-wa__badge" aria-hidden>
-        <img src="/assets/whatsapp.png" alt="" width={66} height={66} />
+        <img src="/assets/whatsapp.png" alt="WhatsApp icon" width={66} height={66} />
       </span>
       <span className="jk-wa__content">
         <strong className="jk-wa__title">Whatsapp</strong>

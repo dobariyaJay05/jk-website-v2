@@ -30,7 +30,7 @@ export function Navbar({ onLogoClick, isDayMode, onDayModeToggle }: Props) {
     <header className={`jk-nav ${scrolled ? "jk-nav--scrolled" : ""}`}>
       <div className="jk-wrap jk-nav__inner">
         <button type="button" className="jk-nav__logo" onClick={onLogoClick} aria-label="JayKishan Solutions home">
-          <img src="/assets/logo.png" alt="" width={44} height={44} />
+          <img src="/assets/logo.png" alt="JayKishan Solutions logo" width={44} height={44} />
           <span className="jk-nav__brand">JayKishan Solutions</span>
         </button>
 

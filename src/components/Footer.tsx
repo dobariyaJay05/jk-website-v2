@@ -14,7 +14,7 @@ export function Footer({ onLogoClick }: Props) {
       <div className="jk-wrap jk-footer__grid">
         <div className="jk-footer__brand">
           <button type="button" className="jk-footer__logo" onClick={onLogoClick} aria-label="Back to top">
-            <img src="/assets/logo.png" alt="" width={48} height={48} />
+            <img src="/assets/logo.png" alt="JayKishan Solutions logo" width={48} height={48} />
             <span>
               <strong style={{ fontFamily: "var(--jk-font-head)", display: "block" }}>JayKishan Solutions</strong>
               <span style={{ fontSize: "0.88rem", color: "var(--jk-muted)" }}>Built to Impress. Designed to Convert.</span>
