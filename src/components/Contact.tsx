@@ -159,8 +159,8 @@ export function Contact() {
               }}
             >
               <EmailLineIcon style={{ flexShrink: 0, color: "var(--jk-accent)" }} />
-              <a href="mailto:jay@jaykishansolutions.com.au" style={{ color: "var(--jk-accent)", fontWeight: 600 }}>
-                jay@jaykishansolutions.com.au
+              <a href="mailto:info@jaykishansolutions.com.au" style={{ color: "var(--jk-accent)", fontWeight: 600 }}>
+                info@jaykishansolutions.com.au
               </a>
             </p>
             <p

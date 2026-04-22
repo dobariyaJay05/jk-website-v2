@@ -65,8 +65,8 @@ export function Footer({ onLogoClick }: Props) {
             }}
           >
             <EmailLineIcon style={{ flexShrink: 0, marginTop: "0.12rem", color: "var(--jk-accent)" }} />
-            <a href="mailto:jay@jaykishansolutions.com.au" style={{ color: "var(--jk-accent)", wordBreak: "break-all" }}>
-              jay@jaykishansolutions.com.au
+            <a href="mailto:info@jaykishansolutions.com.au" style={{ color: "var(--jk-accent)", wordBreak: "break-all" }}>
+              info@jaykishansolutions.com.au
             </a>
           </p>
           <p
