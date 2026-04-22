@@ -22,6 +22,7 @@
   --jk-eyebrow: var(--jk-neon);
   --jk-h2-accent: var(--jk-neon);
   --jk-hero-headline-gradient: linear-gradient(120deg, #f8fafc 0%, var(--jk-neon) 45%, var(--jk-accent) 100%);
+  --jk-hero-headline-solid: #8eeaff;
   --jk-hero-glow-a: rgba(0, 212, 255, 0.35);
   --jk-hero-glow-b: rgba(45, 140, 255, 0.25);
   --jk-hero-visual-bg: linear-gradient(145deg, rgba(248, 250, 252, 0.06), rgba(10, 31, 68, 0.2));
@@ -84,6 +85,7 @@
   --jk-eyebrow: var(--jk-accent);
   --jk-h2-accent: var(--jk-accent);
   --jk-hero-headline-gradient: linear-gradient(120deg, var(--jk-navy) 0%, var(--jk-accent) 45%, #00a8cc 100%);
+  --jk-hero-headline-solid: #0a1f44;
   --jk-hero-glow-a: rgba(45, 140, 255, 0.2);
   --jk-hero-glow-b: rgba(0, 212, 255, 0.12);
   --jk-hero-visual-bg: linear-gradient(145deg, #ffffff, #eef2f7);
@@ -454,10 +456,10 @@ textarea {
 }
 
 .jk-hero__word--grad {
-  background: var(--jk-hero-headline-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--jk-hero-headline-solid);
 }
 
 .jk-hero__sub {
