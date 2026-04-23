@@ -99,7 +99,9 @@ export function Contact() {
     }
     setStatus("loading");
     setError("");
-    const fullPhone = `${countryDial} ${form.phone.trim()}`.trim();
+    const localDigits = form.phone.replace(/\D/g, "");
+    const dialDigits = countryDial.replace(/\D/g, "");
+    const fullPhone = `${dialDigits}${localDigits}`;
     const payload: ContactPayload = {
       ...form,
       name: form.name.trim(),
