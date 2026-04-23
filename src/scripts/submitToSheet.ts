@@ -9,8 +9,11 @@ export type ContactPayload = {
   message: string;
 };
 
+const DEFAULT_GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxFAgHpnWykWhT9XkmgLKYOuVjWZaq9ZfB4tvU5-Ulw33uCDXYKpcVQ-DQiB1rB2SLcNw/exec";
+
 export async function submitToSheet(payload: ContactPayload): Promise<void> {
-  const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const url = (import.meta.env.VITE_GOOGLE_SCRIPT_URL || DEFAULT_GOOGLE_SCRIPT_URL).trim();
   if (!url) {
     throw new Error(
       "Missing VITE_GOOGLE_SCRIPT_URL. Deploy a Google Apps Script web app that appends rows to your sheet, then set the URL in .env"
