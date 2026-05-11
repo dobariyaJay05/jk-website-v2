@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brush, FileText, Globe, Image, Laptop2, Settings2, Sparkles, Wrench } from "lucide-react";
+import { Brush, Cloud, FileText, Globe, Image, Laptop2, Settings2, Sparkles, Wrench } from "lucide-react";
 import { SECTION_IDS } from "../scripts/constants";
 import { goToContactWithPackage, type PackagePrefillKey } from "../scripts/contactPrefill";
 
@@ -20,7 +20,7 @@ type Tier = {
 const tiers: Tier[] = [
   {
     name: "🚀 Starter Launch",
-    price: "$249",
+    price: "A$249",
     desc: "Perfect for individuals, startups, or small businesses needing a clean online presence.",
     delivery: "3–5 Days",
     bestFor: "New businesses, tradies, freelancers",
@@ -34,14 +34,14 @@ const tiers: Tier[] = [
       "Contact form",
       "WhatsApp integration",
       "Basic CTA setup",
-      "Help to get your custom domain (as per listed price)",
-      "Hosting setup guidance (as per listed price)",
+      "Help to get your custom domain (custom quote)",
+      "Hosting setup guidance (A$19–A$49 / month)",
       "Up to 3 revisions",
     ],
   },
   {
     name: "📈 Business Growth",
-    price: "$549",
+    price: "A$549",
     desc: "For businesses wanting better trust, structure, and conversions.",
     delivery: "5–7 Days",
     bestFor: "Growing businesses, service providers",
@@ -62,7 +62,7 @@ const tiers: Tier[] = [
   },
   {
     name: "🏆 Premium Authority",
-    price: "$1349",
+    price: "A$1349",
     desc: "For premium brands wanting a high-converting, modern website.",
     delivery: "7–14 Days",
     bestFor: "Agencies, consultants, premium local brands",
@@ -86,7 +86,7 @@ const tiers: Tier[] = [
   },
   {
     name: "🏢 Enterprise Presence",
-    price: "Starting from $2549",
+    price: "Starting from A$2549",
     priceNote: "Custom scope & pricing on enquiry",
     desc: "A fully custom website solution built for scalability, performance, and serious business growth.",
     delivery: "2–4 Weeks (Custom Scope)",
@@ -140,8 +140,9 @@ export function Pricing() {
             Simple Packages. <span>Powerful Results.</span>
           </h2>
           <p className="jk-lead" style={{ marginInline: "auto", marginBottom: "2.5rem" }}>
-            Choose the website package that fits your business stage. We help you get your custom domain as per listed
-            price, along with responsive design and a professional setup built to help you get more enquiries.
+            Choose the website package that fits your business stage. Custom domains are quoted to your needs; hosting
+            typically runs A$19–A$49 per month. Every package is built with responsive design and a professional setup to
+            help you win more enquiries.
           </p>
         </div>
         <div className="jk-pricing__grid">
@@ -206,42 +207,49 @@ export function Pricing() {
                 <FileText className="jk-addon__icon" />
               </span>
               <strong>Additional revision</strong>
-              $50–$100
+              A$50–A$100
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">
                 <Sparkles className="jk-addon__icon" />
               </span>
               <strong>Extra page</strong>
-              $100–$150
+              A$100–A$150
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">
                 <Brush className="jk-addon__icon" />
               </span>
               <strong>Logo design</strong>
-              $79
+              A$79
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">
                 <Image className="jk-addon__icon" />
               </span>
               <strong>Social media poster</strong>
-              $50–$120 (as per poster)
+              A$50–A$120 (as per poster)
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">
                 <Globe className="jk-addon__icon" />
               </span>
-              <strong>Custom domain + hosting</strong>
-              $10–$30 / year
+              <strong>Custom domain</strong>
+              Custom quote
+            </div>
+            <div className="jk-addon">
+              <span className="jk-addon__icon-wrap">
+                <Cloud className="jk-addon__icon" />
+              </span>
+              <strong>Hosting</strong>
+              A$19–A$49 / month
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">
                 <Wrench className="jk-addon__icon" />
               </span>
               <strong>Maintenance</strong>
-              $10–$30 / month
+              A$10–A$30 / month
             </div>
             <div className="jk-addon">
               <span className="jk-addon__icon-wrap">

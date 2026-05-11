@@ -2,25 +2,28 @@ import { SECTION_IDS } from "./constants";
 
 export const JK_PREFILL_STORAGE = "jk-contact-package-prefill";
 
+/** Fired on `window` when a pricing CTA queues a package so Contact can update without remounting. */
+export const JK_CONTACT_PACKAGE_EVENT = "jk-contact-package";
+
 export type PackagePrefillKey = "starter" | "growth" | "premium" | "enterprise";
 
 /** Values must match `<option value="...">` in Contact form (service + budget). */
 export const packagePrefillMap: Record<PackagePrefillKey, { service: string; budget: string }> = {
   starter: {
     service: "Package: Starter Launch",
-    budget: "Starter Launch ($249)",
+    budget: "Starter Launch (A$249)",
   },
   growth: {
     service: "Package: Business Growth",
-    budget: "Business Growth ($549)",
+    budget: "Business Growth (A$549)",
   },
   premium: {
     service: "Package: Premium Authority",
-    budget: "Premium Authority ($1349)",
+    budget: "Premium Authority (A$1349)",
   },
   enterprise: {
     service: "Package: Enterprise Presence",
-    budget: "Enterprise (from $2549)",
+    budget: "Enterprise (from A$2549)",
   },
 };
 
@@ -52,5 +55,10 @@ export function scrollToContact(): void {
 
 export function goToContactWithPackage(key: PackagePrefillKey): void {
   queuePackagePrefill(key);
+  try {
+    window.dispatchEvent(new CustomEvent<PackagePrefillKey>(JK_CONTACT_PACKAGE_EVENT, { detail: key }));
+  } catch {
+    /* ignore */
+  }
   scrollToContact();
 }

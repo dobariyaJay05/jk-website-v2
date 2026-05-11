@@ -1,10 +1,20 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./styles/globals.css";
+import { initBootSplash, destroyBootSplash } from "./boot-splash";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+initBootSplash();
+
+void (async () => {
+  const [{ StrictMode }, { createRoot }, { default: App }] = await Promise.all([
+    import("react"),
+    import("react-dom/client"),
+    import("./App"),
+  ]);
+  await import("./styles/globals.css");
+
+  destroyBootSplash();
+
+  createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+})();

@@ -71,14 +71,14 @@ export function Hero() {
         >
           <div className="jk-hero__glow" aria-hidden />
           <motion.div className="jk-hero__visual" style={{ transform }}>
-            <img src="/assets/logo.png" alt="JayKishan Solutions logo" width={900} height={500} />
-            <div className="jk-hero__badge">
-              <div>
-                <strong>Conversion-first build</strong>
-                <span>Structure, speed, and clarity engineered for leads.</span>
-              </div>
-              <span style={{ color: "var(--jk-neon)", fontWeight: 700 }}>AU</span>
-            </div>
+            <img
+              className="jk-hero__banner"
+              src="/assets/banner.png"
+              alt="JayKishan Solutions"
+              width={900}
+              height={500}
+              loading="lazy"
+            />
           </motion.div>
         </div>
       </div>

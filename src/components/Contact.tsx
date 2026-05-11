@@ -2,7 +2,12 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { SECTION_IDS, whatsappHref } from "../scripts/constants";
 import { EmailLineIcon, PhoneLineIcon } from "./ContactLineIcons";
-import { consumePackagePrefill } from "../scripts/contactPrefill";
+import {
+  consumePackagePrefill,
+  JK_CONTACT_PACKAGE_EVENT,
+  packagePrefillMap,
+  type PackagePrefillKey,
+} from "../scripts/contactPrefill";
 import { submitToSheet, type ContactPayload } from "../scripts/submitToSheet";
 import { COUNTRY_DIAL_CODES } from "../scripts/countryDialCodes";
 import { SubmitSuccessFlight } from "./SubmitSuccessFlight";
@@ -58,6 +63,18 @@ export function Contact() {
     if (pre) {
       setForm((f) => ({ ...f, service: pre.service, budget: pre.budget }));
     }
+  }, []);
+
+  useEffect(() => {
+    const onPackagePrefill = (e: Event) => {
+      const key = (e as CustomEvent<PackagePrefillKey>).detail;
+      if (key && key in packagePrefillMap) {
+        const row = packagePrefillMap[key];
+        setForm((f) => ({ ...f, service: row.service, budget: row.budget }));
+      }
+    };
+    window.addEventListener(JK_CONTACT_PACKAGE_EVENT, onPackagePrefill);
+    return () => window.removeEventListener(JK_CONTACT_PACKAGE_EVENT, onPackagePrefill);
   }, []);
 
   const onChange = (key: keyof ContactPayload, value: string) => {
@@ -336,7 +353,8 @@ export function Contact() {
                     <option value="Lead Systems">Lead Systems</option>
                     <option value="Redesign">Redesign</option>
                     <option value="Maintenance">Maintenance</option>
-                    <option value="Custom domain + hosting">Custom domain + hosting</option>
+                    <option value="Custom domain">Custom domain</option>
+                    <option value="Hosting">Hosting</option>
                     <option value="Logo Design">Logo Design</option>
                     <option value="Social Media Posters">Social Media Posters</option>
                     <option value="Mobile Application Development">Mobile Application Development</option>
@@ -357,10 +375,10 @@ export function Contact() {
                   aria-required="true"
                 >
                   <option value="">Select budget range</option>
-                  <option value="Starter Launch ($249)">Starter Launch ($249)</option>
-                  <option value="Business Growth ($549)">Business Growth ($549)</option>
-                  <option value="Premium Authority ($1349)">Premium Authority ($1349)</option>
-                  <option value="Enterprise (from $2549)">Enterprise (from $2549)</option>
+                  <option value="Starter Launch (A$249)">Starter Launch (A$249)</option>
+                  <option value="Business Growth (A$549)">Business Growth (A$549)</option>
+                  <option value="Premium Authority (A$1349)">Premium Authority (A$1349)</option>
+                  <option value="Enterprise (from A$2549)">Enterprise (from A$2549)</option>
                   <option value="Custom / TBD">Custom / TBD</option>
                 </select>
               </div>

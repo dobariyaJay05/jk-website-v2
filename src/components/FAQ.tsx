@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "How does hosting and the domain work?",
-    a: "We help you get your custom domain and hosting as per listed pricing. We set everything up cleanly and hand over access so you stay in control.",
+    a: "We help you get a custom domain (quoted to your needs) and hosting from A$19–A$49 per month as shown in Pricing. We set everything up cleanly and hand over access so you stay in control.",
   },
   {
     q: "Can you help after launch?",
